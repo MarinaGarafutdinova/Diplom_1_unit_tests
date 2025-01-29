@@ -1,8 +1,10 @@
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import praktikum.Bun;
+
+import static org.junit.Assert.assertEquals;
+
 
 @RunWith(Parameterized.class)
 
@@ -30,7 +32,9 @@ public class  BunUnitTests {
     @Test
     public void checkBunParameterizedTest() {
         Bun bun = new Bun(name, price);
-        Assert.assertEquals(price, bun.getPrice(), 0);
+        //Assert.assertEquals(price, bun.getPrice(), 0);
+        float result = bun.getPrice();
+        assertEquals("Неверно передана цена", price, result,0);
     }
 
 }
